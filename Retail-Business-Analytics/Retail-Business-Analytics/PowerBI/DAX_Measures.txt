@@ -1,0 +1,15 @@
+Total Revenue =
+SUMX(Sales, Sales[Quantity] * Sales[Unit Price] * (1 - Sales[Discount]))
+
+Total Cost =
+SUMX(Sales, Sales[Quantity] * Sales[Unit Cost])
+
+Total Profit = [Total Revenue] - [Total Cost]
+
+Total Orders = DISTINCTCOUNT(Sales[Order ID])
+
+Total Customers = DISTINCTCOUNT(Sales[Customer ID])
+
+Average Order Value = DIVIDE([Total Revenue], [Total Orders])
+
+Profit Margin % = DIVIDE([Total Profit], [Total Revenue])
